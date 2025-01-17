@@ -8,12 +8,11 @@ Authors@R: c(
     person(given = "Adi", family = "Tarca", role = "aut",
            email = "atarca@med.wayne.edu")
 )
-Description: The PCPCmodel package provides a tool to calculate epigenetic gestational age using a predefined linear model based on beta values of CpG sites.
+Description: The PCPCmodel package provides a tool to calculate epigenetic gestational age (eGA) using a predefined linear model based on beta values of CpG sites.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.3
 URL: https://github.com/dw1227/PCPCmodel
 Imports: stats
-Depends: 
-    R (>= 2.10)
+Depends: R (>= 2.10)
