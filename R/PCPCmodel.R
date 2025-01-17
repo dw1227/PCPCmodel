@@ -1,7 +1,7 @@
-#' Placental Clock
+#' PCPCmodel
 #'
 #' This package provides a function to calculate the epigenetic gestational age (eGA)
-#' using a predefined linear model based on beta values of specific CpG sites.
+#' using the Post Challenge Placental Clock.
 
 #' @title Calculate Epigenetic Gestational Age
 #' @description This function computes the epigenetic gestational age (eGA) for multiple samples based on a matrix or data frame of beta values.
