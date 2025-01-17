@@ -12,25 +12,26 @@ calculate_eGA <- function(beta_matrix) {
   # Read coefficients from the internal data
   coefficients_data <- coefficients
 
-  # Extract required CpGs and coefficients
-  required_cpgs <- get_required_cpgs 
-  coefficients <- setNames(coefficients_data$Coefficient, coefficients_data$CpG)
+ # Extract required CpGs and coefficients
+required_cpgs <- get_required_cpgs() 
+coefficients <- setNames(coefficients_data$Coefficient, coefficients_data$CpG)
 
-  # Check if all required CpGs are present in the input
-  missing_cpgs <- setdiff(required_cpgs, rownames(beta_matrix))
-  if (length(missing_cpgs) > 0) {
-    stop("The following CpGs are missing in the input: ", paste(missing_cpgs, collapse = ", "))
-  }
+# Check if all required CpGs are present in the input
+missing_cpgs <- setdiff(required_cpgs, rownames(beta_matrix))
+if (length(missing_cpgs) > 0) {
+  stop("The following CpGs are missing in the input: ", paste(missing_cpgs, collapse = ", "))
+}
 
-  # Subset the beta matrix to include only required CpGs
-  beta_subset <- beta_matrix[required_cpgs, , drop = FALSE]
+# Subset the beta matrix to include only required CpGs
+beta_subset <- beta_matrix[required_cpgs, , drop = FALSE]
 
-  # Calculate eGA for each sample
-  intercept <- coefficients["(Intercept)"]
-  eGA <- intercept + colSums(beta_subset * coefficients[required_cpgs])
+# Calculate eGA for each sample
+intercept <- coefficients_data[coefficients_data$CpG=="(Intercept)","Coefficient"]
+eGA <- intercept + colSums(beta_subset * coefficients[required_cpgs])
 
-  # Set sample IDs as names of the output vector
-  names(eGA) <- colnames(beta_matrix)
+# Set sample IDs as names of the output vector
+names(eGA) <- colnames(beta_matrix)
+
 
   return(eGA)
 }
