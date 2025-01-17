@@ -1,18 +1,11 @@
 Package: PCPCmodel
 Type: Package
-Title: Epigenetic Gestational Age Calculation according to Post Challenge Placental Clock
+Title: Post Challenge Placental Clock
 Version: 0.1.0
-Authors@R: c(
-    person(given = "Gaurav", family = "Bhatti", role = c("aut", "cre"),
-           email = "dw1227@wayne.edu"),
-    person(given = "Adi", family = "Tarca", role = "aut",
-           email = "atarca@med.wayne.edu")
-)
-Description: The PCPCmodel package provides a tool to calculate epigenetic gestational age (eGA) using a predefined linear model based on beta values of CpG sites.
+Author: Gaurav Bhatti
+Maintainer: Gaurav Bhatti <dw1227@wayne.edu>
+Description: Computes epigenetic gestational age using beta values.
 License: GPL-3
-Encoding: UTF-8
-LazyData: true
-RoxygenNote: 7.2.3
-URL: https://github.com/dw1227/PCPCmodel
 Imports: stats
-Depends: R (>= 2.10)
+Depends: 
+    R (>= 2.10)
