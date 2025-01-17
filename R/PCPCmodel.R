@@ -13,7 +13,7 @@ calculate_eGA <- function(beta_matrix) {
   coefficients_data <- coefficients
 
   # Extract required CpGs and coefficients
-  required_cpgs <- coefficients_data$CpG
+  required_cpgs <- get_required_cpgs 
   coefficients <- setNames(coefficients_data$Coefficient, coefficients_data$CpG)
 
   # Check if all required CpGs are present in the input
