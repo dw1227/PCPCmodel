@@ -35,13 +35,7 @@ calculate_eGA <- function(beta_matrix) {
   return(eGA)
 }
 
-# Example data
-# beta_matrix <- matrix(
-#   c(0.5, 0.7, 0.3, 0.6, 0.8, 0.4),
-#   nrow = 3, byrow = TRUE,
-#   dimnames = list(c("cg00000029", "cg00000108", "cg00000109"), c("Sample1", "Sample2"))
-# )
-# calculate_eGA(beta_matrix)
+
 
 #' @title Get Required CpG Sites
 #' @description Returns the list of CpG sites required for the calculation of epigenetic gestational age.
@@ -49,29 +43,6 @@ calculate_eGA <- function(beta_matrix) {
 #' @export
 get_required_cpgs <- function() {
   coefficients_data <- coefficients
-  return(coefficients_data$CpG)
+  return(setdiff(coefficients_data$CpG, "(Intercept)"))
 }
 
-# Internal dataset
-# usethis::use_data(coefficients, internal = TRUE, overwrite = TRUE)
-
-# Create a package structure and documentation
-# usethis::create_package("PCPCmodel")
-# usethis::use_roxygen_md()
-# devtools::document()
-# Build and install the package with devtools::install()
-
-
-
- # coefficients <- read.csv("wsu_coefficients.csv", stringsAsFactors = FALSE)
- # usethis::use_data(coefficients, internal = TRUE, overwrite = TRUE)
-
- # devtools::document()
-# library(PCPCmodel)
-# beta_matrix <- matrix(
-#   c(0.5, 0.7, 0.3, 0.6, 0.8, 0.4),
-#   nrow = 3, byrow = TRUE,
-#   dimnames = list(c("cg00000029", "cg00000108", "cg00000109"), c("Sample1", "Sample2"))
-# )
-# calculate_eGA(beta_matrix)
-# PCPCmodel::get_required_cpgs()
